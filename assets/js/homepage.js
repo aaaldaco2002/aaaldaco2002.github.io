@@ -54,3 +54,14 @@ var TxtRotate = function(el, toRotate, period) {
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   };
+
+  const images = document.querySelectorAll('.slideshow img');
+  let currentIndex = 0;
+
+  function changeImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+  }
+
+  setInterval(changeImage, 3000);
