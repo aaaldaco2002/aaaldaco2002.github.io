@@ -56,7 +56,7 @@ var TxtRotate = function(el, toRotate, period) {
   };
 
   const images = document.querySelectorAll('.slideshow img');
-  let currentIndex = 0;
+  let currentIndex = Math.random() % length(images);
 
   function changeImage() {
       images[currentIndex].classList.remove('active');
