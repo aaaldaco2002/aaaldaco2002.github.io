@@ -55,13 +55,15 @@ var TxtRotate = function(el, toRotate, period) {
     document.body.appendChild(css);
   };
 
-  const images = document.querySelectorAll('.slideshow img');
-  let currentIndex = Math.random() % length(images);
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll('.profile img');
+    let currentIndex = 0;
 
-  function changeImage() {
-      images[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.add('active');
-  }
+    function changeImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }
 
-  setInterval(changeImage, 3000);
+    setInterval(changeImage, 3000);
+});
